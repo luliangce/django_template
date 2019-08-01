@@ -12,7 +12,7 @@ if TYPE_CHECKING:
 
 
 def JSON(code: E = OK, data: Union[dict] = None, **kwargs) -> HttpResponse:
-    response = E.body
+    response = code.body
     if data:
         response["data"] = data
 
