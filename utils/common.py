@@ -1,7 +1,7 @@
 import json
 from typing import TYPE_CHECKING, Union
 
-from django.http.response import HttpResponse, JsonResponse
+from django.http.response import HttpResponse
 from jose import jwt
 
 from ecode import OK, E

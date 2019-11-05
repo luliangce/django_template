@@ -1,6 +1,8 @@
-from utils.common import JSON
-from ecode import LOGINREQUIRED
 from typing import TYPE_CHECKING
+
+from ecode import LOGINREQUIRED
+from utils.common import JSON
+
 if TYPE_CHECKING:
     from django.http import HttpRequest
     from django.contrib.auth.models import User
