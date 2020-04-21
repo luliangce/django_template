@@ -4,7 +4,7 @@ from typing import TYPE_CHECKING
 from django.contrib.auth.models import AnonymousUser, User
 from jose import jwt
 
-from ZRT.settings import SECRET_KEY
+from django.conf import settings
 
 if TYPE_CHECKING:
     from django.http import HttpRequest
@@ -29,7 +29,8 @@ class JWTVerifyMiddleware:
     def __call__(self, request: 'HttpRequest'):
         token = request.headers.get("Authorization")
         try:
-            claims = jwt.decode(token.replace('Bearer ',''), SECRET_KEY)
+            claims = jwt.decode(token.replace('Bearer ', ''),
+                                settings.SECRET_KEY)
             request.user = User.objects.get(id=claims["id"])
         except:
             request.user = AnonymousUser()
