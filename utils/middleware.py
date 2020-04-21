@@ -23,19 +23,15 @@ class JSONLoaderMiddleware:
 
 
 class JWTVerifyMiddleware:
-
     def __init__(self, get_response):
         self.get_response = get_response
 
     def __call__(self, request: 'HttpRequest'):
         token = request.headers.get("Authorization")
-        if token:
-            try:
-                claims = jwt.decode(token, SECRET_KEY)
-                request.user = User.objects.get(claims["id"])
-            except:
-                request.user = AnonymousUser()
-        else:
+        try:
+            claims = jwt.decode(token.replace('Bearer ',''), SECRET_KEY)
+            request.user = User.objects.get(id=claims["id"])
+        except:
             request.user = AnonymousUser()
 
         return self.get_response(request)
