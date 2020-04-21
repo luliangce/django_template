@@ -1,10 +1,9 @@
 import json
 from typing import TYPE_CHECKING
 
+from django.conf import settings
 from django.contrib.auth.models import AnonymousUser, User
 from jose import jwt
-
-from django.conf import settings
 
 if TYPE_CHECKING:
     from django.http import HttpRequest
