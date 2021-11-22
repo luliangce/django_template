@@ -6,7 +6,6 @@ from django.test import TestCase
 
 
 class TestEcode(TestCase):
-
     def test_ecode(self):
         from ecode import OK
         ok_body = json.dumps(OK.body)
