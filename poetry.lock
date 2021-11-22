@@ -90,7 +90,7 @@ reference = "ts"
 
 [[package]]
 name = "django"
-version = "3.1.12"
+version = "3.1.13"
 description = "A high-level Python Web framework that encourages rapid development and clean, pragmatic design."
 category = "main"
 optional = false
@@ -604,7 +604,7 @@ reference = "ts"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "01cddc991e461e00e7c36cbe137605635eeab43e8fbab608e8aa5f070829a0f2"
+content-hash = "be2fe0d9cfc593e3b4720ca8176cd3625bf80fd0288ab7410e717f33dc960fe4"
 
 [metadata.files]
 appnope = [
@@ -632,8 +632,8 @@ decorator = [
     {file = "decorator-4.4.2.tar.gz", hash = "sha256:e3a62f0520172440ca0dcc823749319382e377f37f140a0b99ef45fecb84bfe7"},
 ]
 django = [
-    {file = "Django-3.1.12-py3-none-any.whl", hash = "sha256:a523d62b7ab2908f551dabc32b99017a86aa7784e32b761708e52be3dce6d35d"},
-    {file = "Django-3.1.12.tar.gz", hash = "sha256:dc41bf07357f1f4810c1c555b685cb51f780b41e37892d6cc92b89789f2847e1"},
+    {file = "Django-3.1.13-py3-none-any.whl", hash = "sha256:a6e0d1ff11095b7394c079ade7094c73b2dc3df4a7a373c9b58ed73b77a97feb"},
+    {file = "Django-3.1.13.tar.gz", hash = "sha256:9f8be75646f62204320b195062b1d696ba28aa3d45ee72fb7c888ffaebc5bdb2"},
 ]
 django-cors-headers = [
     {file = "django-cors-headers-3.10.0.tar.gz", hash = "sha256:cd6f4360f5246569c149dc1c40c907c191f1ec45551e10d2a2e2e68512652f78"},
