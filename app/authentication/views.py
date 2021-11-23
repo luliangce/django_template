@@ -1,24 +1,13 @@
+from authentication.schema.request import *
+from common_schema import R
 from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.http import HttpRequest
-from ninja import Router
-from ninja.schema import Schema
-from pydantic.fields import Field
-
 from ecode import ERROR
-from utils.common import R, custom_auth, issue_token
+from ninja import Router
+from utils import issue_token
 
 auth_router = Router(tags=['用户账户'])
-
-
-class LoginParams(Schema):
-
-    username: str = Field(None, description='用户名')
-    password: str = Field(..., description='密码', min_length=8)
-
-
-class LoginResponse(Schema):
-    token: str
 
 
 @auth_router.post('login', response=R[LoginResponse])
@@ -30,7 +19,7 @@ def login_impl(request: HttpRequest, body: LoginParams):
     return R.error(ERROR.inherit("账号密码不匹配"))
 
 
-@auth_router.post("register")
+@auth_router.post("register", response=R)
 def register_impl(request: HttpRequest, body: LoginParams):
     if User.objects.filter(username=body.username).exists():
         return R.error(ERROR.inherit("该用户名已经存在"))

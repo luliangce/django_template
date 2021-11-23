@@ -1,11 +1,10 @@
+from authentication.views import auth_router
 from django.core.exceptions import PermissionDenied
 from django.http.request import HttpRequest
 from django.http.response import HttpResponse, JsonResponse
 from django.urls import path
-from ninja import NinjaAPI
-
-from authentication.views import auth_router
 from ecode import LOGINREQUIRED
+from ninja import NinjaAPI
 
 api = NinjaAPI(title="demo")
 api.add_router('auth/', auth_router)
