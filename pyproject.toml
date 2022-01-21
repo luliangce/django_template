@@ -16,7 +16,7 @@ django-cors-headers = "^3.10.0"
 yapf = "^0.31.0"
 pylint = "^2.4.4"
 rope = "^0.16.0"
-ipython = "^7.13.0"
+ipython = "^7.31.1"
 [[tool.poetry.source]]
 url = "https://pypi.tuna.tsinghua.edu.cn/simple"
 name = "ts"
