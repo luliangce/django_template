@@ -8,7 +8,7 @@ license = "MIT"
 [tool.poetry.dependencies]
 python = "^3.7"
 python-jose = "^3.3.0"
-django = "^3.2.9"
+django = "^3.2.25"
 django-ninja = "^0.16.1"
 django-cors-headers = "^3.10.0"
 
